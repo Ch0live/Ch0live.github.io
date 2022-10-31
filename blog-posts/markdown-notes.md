@@ -9,8 +9,8 @@ Created by John Gruber and Aaron Schwartz in 2004, it stands as one of the most 
  Quick and simple formatting that can be read plainly makes it a great tool for many applications.
  Personally, I believe it's greatest strength to most people is through using it as a note-taking tool.
 
-> A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.
--John Gruber, creator of Markdown.
+> "*A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions*"
+John Gruber, creator of Markdown.
 [Source](https://daringfireball.net/projects/markdown/syntax)
 
 A Markdown file can be both a quick to do list, written and looked at exclusively in it's raw form.
@@ -24,15 +24,27 @@ Typically when I write meeting notes, quick checklists or timeboxed research the
 And being able to simply copy and paste the text to another space (a key strength of all markup languages) removes any formatting issues experienced with more sophisticated text editors.
 
 ## Markdown flavours
-As more people began to use Markdown for more bespoke documents, the demand for specific features in the language grew. Enter Markdown flavours - a range of extensions on the language increasing it's capabilities and utility.
 
-- easy example is GitHub's flavour, which supports programming language selection
+// add something about `CommonMark`
 
+As more people began to use Markdown for more bespoke documents, the demand for specific features in the language grew. Enter Markdown flavours - a range of extensions on the language increasing it's capabilities and utility. The most common example developers encounter these days is [the GitHub Markdown flavour](https://github.github.com/gfm/), a superset of the widely used [CommonMark](https://commonmark.org/). This flavour adds syntax highlighting for a range of programming languages within the Markdown code blocks by simply adding the language to the start of the block
 
-## What else can it do?
+```
+```language
+\```
+```
+
+Other additional tools include [checklist items](https://github.github.com/gfm/#task-list-items-extension-) and text strikethrough. The GitHub flavour interpreter is able to successfully compile these features to HTML.
+
+## So people can expand on Gruber's Markdown syntax, what else can it do?
+Markdown was designed to be compiled to HTML as it's primary function. This makes it great for static websites such as blogs and documentation. Markdown can also be used to create presentations using [Marp](https://github.com/marp-team/marp). Additional rules are included to dictate the structure and look of the presentation
+
+![Marp slide creation](C:\Git\personal-blog\Ch0live.github.io\assets\gif\marp-example-slide-deck.gif)
+
+All GitHub repositories include a Markdown `README.md`. These Markdown files support additional community-made widgets for information like page traffic and package versioning. A good example of one of these tools is the ---
+- Are they called [GitHub badges?](https://github.com/puf17640/git-badges#readme) 
+
 - Compile to HTML (show the presentation in HTML on personal page) (try and create JavaScript interpreter with [commonmark.js](https://github.com/commonmark/commonmark.js))
-- Markdown presentations (maybe finish the talk with this as it would be a good way to view the content)
-- Used for GitHub READMEs with lots of extendable tools
 - Make print-ready documents like documents in Word or Publisher
 - Showdownjs: https://github.com/showdownjs/showdown
 
@@ -56,6 +68,7 @@ and GitHub pages use Jekyll, a software designed to turn Markdown files into sim
 
 ## Other notes
 - The presentation could have gifs of each tool used in Atom with the rendered Markdown on the RHS
+- Should do an external question submission page, show at beginning of the talk and when revealing the presentation was itself a Markdown file, switch to it and answer questions (a bit more subtle than messages in the teams chat)
 
 ## Sources & saved links
 - [Intro overview](https://document360.com/blog/introductory-guide-to-markdown-for-documentation-writers/#:~:text=Some%20of%20the%20many%20uses,and%20StackExchange%2C%20among%20many%20others.)
