@@ -5,14 +5,16 @@ class BlogPost extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div>
-        <div class="font-medium text-3xl mb-2 text-gray-100">
-          Sample injected blog post header
-        </div>
-        <body class="font-medium text-m mb-2 text-black break-after-auto text-center">
-          Sample injected blog post body
-        </body>
-      </div>
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+    <div id="mycontent"></div>
+    <script>
+
+      var converter = new showdown.Converter();
+      var md = '[**Showdown**](http://www.showdownjs.com) Example code\n';
+      var html = converter.makeHtml(md);
+      document.querySelector('#mycontent').innerHTML = html;
+
+    </script>
     `;
   }
 }
