@@ -19,7 +19,7 @@
     <script>
 
       var converter = new showdown.Converter();
-      var md = '[**Showdown**](http://www.showdownjs.com) Example code\n';
+      var md = `# header \n## subheader \n### section \nbody text`
       var html = converter.makeHtml(md);
       document.querySelector('#mycontent').innerHTML = html;
 
