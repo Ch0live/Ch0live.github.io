@@ -1,0 +1,6 @@
+- name: Splash Page
+  link: ../../index.html
+- name: Home
+  link: /blog.html
+- name: About
+  link: /about.html
