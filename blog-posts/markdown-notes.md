@@ -13,48 +13,51 @@ Created by John Gruber and Aaron Schwartz in 2004, it stands as one of the most 
 John Gruber, creator of Markdown.
 [Source](https://daringfireball.net/projects/markdown/syntax)
 
-A Markdown file can be both a quick to do list, written and looked at exclusively in it's raw form.
-But it can also be a well organized and formatted ideas space.
+A Markdown file can be used for just a quick to do list, written and looked at exclusively in it's raw form.
+But it can also be a well organized and formatted ideas space, documentation and a range of other things once utilized correctly.
 
 ## Core Tools in the base Markdown Language
 Markdown comes with a myriad of syntax rules for organizing
 By far the three most common tools you will use when writing in Markdown are lists, links and headings.
+
+![Lists, links and headings](../assets/img/headingsListsLinks.png)
+
 Adding these three components to your document is fast, easy and very legible.
 Typically when I write meeting notes, quick checklists or timeboxed research these 3 tools are all I use.
 And being able to simply copy and paste the text to another space (a key strength of all markup languages) removes any formatting issues experienced with more sophisticated text editors.
 
 ## Markdown flavours
 
-// add something about `CommonMark`
+As more people began to use Markdown for more bespoke documents, the demand for specific features in the language grew. Enter Markdown flavours - a range of extensions on the language increasing it's capabilities and utility.
 
-As more people began to use Markdown for more bespoke documents, the demand for specific features in the language grew. Enter Markdown flavours - a range of extensions on the language increasing it's capabilities and utility. The most common example developers encounter these days is [the GitHub Markdown flavour](https://github.github.com/gfm/), a superset of the widely used [CommonMark](https://commonmark.org/). This flavour adds syntax highlighting for a range of programming languages within the Markdown code blocks by simply adding the language to the start of the block
+When Markdown was released the syntax was not specified unambiguously. Often documents would render differently in different systems due to different interpretations of Markdown's rule set. [CommonMark](https://commonmark.org/) is a modern day solution to this ambiguity, specifying a standard specification for users of Markdown. This allowed easy transfer of Markdown to different systems and safe extensibility of the syntax.
+
+ The most common example developers encounter these days is [the GitHub Markdown flavour](https://github.github.com/gfm/), a superset of the CommonMark specification. This flavour adds many useful changes relevant to the software world. A common example is highlighting for a range of programming languages within the Markdown code blocks. By simply adding the language to the start of the block, code snippets can be coloured and formatted as the language would.
 
 ```
 ```language
 \```
 ```
 
-Other additional tools include [checklist items](https://github.github.com/gfm/#task-list-items-extension-) and text strikethrough. The GitHub flavour interpreter is able to successfully compile these features to HTML.
+Other additional tools include [checklist items](https://github.github.com/gfm/#task-list-items-extension-) that can be interactively checked off post rendering and text strikethrough for clearly deprecating comments or wording without removing it. As a Markdown flavour, the GitHub flavour interpreter is able to successfully compile these features to HTML for use on GitHub.
 
-## So people can expand on Gruber's Markdown syntax, what else can it do?
-Markdown was designed to be compiled to HTML as it's primary function. This makes it great for static websites such as blogs and documentation. Markdown can also be used to create presentations using [Marp](https://github.com/marp-team/marp). Additional rules are included to dictate the structure and look of the presentation
+## So if Gruber's Markdown syntax is extendable, what are people creating with it?
 
-![Marp slide creation](C:\Git\personal-blog\Ch0live.github.io\assets\gif\marp-example-slide-deck.gif)
+Markdown was designed to be compiled to HTML as it's primary function. This makes it great for static websites such as blogs and documentation. Static site builders like [Hugo](https://gohugo.io/) and [Jekyll](https://jekyllrb.com/) take this a step further, enabling easy and quick site building. With almost no handwritten HTML and Markdown files with content and styling rules, static websites can be quickly created with these tools.
 
-All GitHub repositories include a Markdown `README.md`. These Markdown files support additional community-made widgets for information like page traffic and package versioning. A good example of one of these tools is the ---
-- Are they called [GitHub badges?](https://github.com/puf17640/git-badges#readme) 
+Markdown can also be used to create presentations using [Marp](https://github.com/marp-team/marp). Additional rules are included to dictate the structure and look of the presentation, with all the styling content and slide transition preferences contained within a single `.md`!
 
-- Compile to HTML (show the presentation in HTML on personal page) (try and create JavaScript interpreter with [commonmark.js](https://github.com/commonmark/commonmark.js))
+![Marp slide creation](../assets/gif/marp-example-slide-deck.gif)
+
+All GitHub repositories include a Markdown `README.md`. Alongside all other extra syntax rules included with the GitHub flavour, these Markdown files support additional community-made widgets, or "shields". These can display information such as page traffic, package versioning. A good example of one of these tools is the [visitors badge](https://www.visitorbadge.io/). For a look at lots set up shield applications see [shields.io](https://shields.io/).
+
+![Java annotations README.md](../assets/img/javaAnnotationsShieldsExample.png)
+
+
 - Make print-ready documents like documents in Word or Publisher
-- Showdownjs: https://github.com/showdownjs/showdown
 
-## So who writes in Markdown?
-It's very likely you discovered Markdown first through GitHub.
-README files are famously written in Markdown, using the GitHub flavour.
-GitHub also uses Markdown for GitHub account bio pages
-[source](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme)
-and GitHub pages use Jekyll, a software designed to turn Markdown files into simple static HTML websites
-[source](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll).
+
+- Showdownjs: https://github.com/showdownjs/showdown
 
 ## The good
 - Used by lots of people, learn once used everywhere
@@ -72,6 +75,9 @@ and GitHub pages use Jekyll, a software designed to turn Markdown files into sim
 
 ## Sources & saved links
 - [Intro overview](https://document360.com/blog/introductory-guide-to-markdown-for-documentation-writers/#:~:text=Some%20of%20the%20many%20uses,and%20StackExchange%2C%20among%20many%20others.)
-- [CommonMark](https://commonmark.org/)]
+- [CommonMark](https://commonmark.org/)
 - [Markdown Flavours](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)
 - [Reddit Markdown](https://www.reddit.com/wiki/markdown/)
+
+
+
