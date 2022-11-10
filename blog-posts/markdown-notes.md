@@ -1,7 +1,4 @@
-## Foreword
-My blog posts weigh heavily on diagrammatic information; they are not intended to be read without the included visual prompts. If you cannot see the non-text content please refer to the image alt-text.
-
-# The strengths of Markdown (title WIP)
+# An introduction to Markdown
 Markdown is a brilliant tool for quickly writing up universally accessible documents.
 Created by John Gruber and Aaron Schwartz in 2004, it stands as one of the most popular and widely used markup languages
 ([site](https://en.wikipedia.org/wiki/Markup_language))
@@ -34,50 +31,33 @@ When Markdown was released the syntax was not specified unambiguously. Often doc
 
  The most common example developers encounter these days is [the GitHub Markdown flavour](https://github.github.com/gfm/), a superset of the CommonMark specification. This flavour adds many useful changes relevant to the software world. A common example is highlighting for a range of programming languages within the Markdown code blocks. By simply adding the language to the start of the block, code snippets can be coloured and formatted as the language would.
 
+````
+```java
 ```
-```language
-\```
-```
+````
 
 Other additional tools include [checklist items](https://github.github.com/gfm/#task-list-items-extension-) that can be interactively checked off post rendering and text strikethrough for clearly deprecating comments or wording without removing it. As a Markdown flavour, the GitHub flavour interpreter is able to successfully compile these features to HTML for use on GitHub.
 
 ## So if Gruber's Markdown syntax is extendable, what are people creating with it?
 
+Due to its ease of translation to HTML and readability, lot's of websites use it for messages, documentation, blog pages and more! Website's like Reddit store all posts and comments as Markdown files, giving users lots of choices for formatting their communication on the site. Even Scott Logic's own blog site uses Markdown for all the blog posts!
+
+![Sites that use Markdown](../assets/img/sitesThatUseMarkdown.png)
+
 Markdown was designed to be compiled to HTML as it's primary function. This makes it great for static websites such as blogs and documentation. Static site builders like [Hugo](https://gohugo.io/) and [Jekyll](https://jekyllrb.com/) take this a step further, enabling easy and quick site building. With almost no handwritten HTML and Markdown files with content and styling rules, static websites can be quickly created with these tools.
-
-Markdown can also be used to create presentations using [Marp](https://github.com/marp-team/marp). Additional rules are included to dictate the structure and look of the presentation, with all the styling content and slide transition preferences contained within a single `.md`!
-
-![Marp slide creation](../assets/gif/marp-example-slide-deck.gif)
 
 All GitHub repositories include a Markdown `README.md`. Alongside all other extra syntax rules included with the GitHub flavour, these Markdown files support additional community-made widgets, or "shields". These can display information such as page traffic, package versioning. A good example of one of these tools is the [visitors badge](https://www.visitorbadge.io/). For a look at lots set up shield applications see [shields.io](https://shields.io/).
 
-![Java annotations README.md](../assets/img/javaAnnotationsShieldsExample.png)
+![Java annotations README.md, see https://github.com/JetBrains/java-annotations](../assets/img/javaAnnotationsShieldsExample.png)
 
+Creating content for the web isn't the only use people have for this markup language. Using [Marp](https://github.com/marp-team/marp) users can create presentations from Markdown. Additional rules are included to dictate the structure and look of the presentation, with all the styling content and slide transition preferences contained within a single `.md`! It is also easy to create print ready documents of Markdown files in a variety of formats using conversion tooling like[Pandoc](https://pandoc.org/).
 
-- Make print-ready documents like documents in Word or Publisher
+![Marp slide creation](../assets/gif/marp-example-slide-deck.gif)
 
-
-- Showdownjs: https://github.com/showdownjs/showdown
-
-## The good
-- Used by lots of people, learn once used everywhere
-- Readable when raw (unlike HTML)
-- Platform independent
-- As someone who had to write technical reports in uni in LaTeX, it's much nicer. Much more predictable behaviour, simpler syntax, more widely used
-
-## The bad
-- Unstandardised in it's creation
-  - community attempts to standardise [Like CommonMark](https://commonmark.org/)
-
-## Other notes
-- The presentation could have gifs of each tool used in Atom with the rendered Markdown on the RHS
-- Should do an external question submission page, show at beginning of the talk and when revealing the presentation was itself a Markdown file, switch to it and answer questions (a bit more subtle than messages in the teams chat)
+Ultimately your use of and interaction with Markdown will likely be dictated by where you see it in your use of digital online tools, be it on a Stack Overflow thread or personal blog. But I encourage you to at least explore some of the note taking tools that support Markdown (such as [Notion](https://www.notion.so/) and [Obsidian](https://obsidian.md/)). Once you've learnt the syntax, writing quick, widely supported and convertable content in Markdown is a snap.
 
 ## Sources & saved links
 - [Intro overview](https://document360.com/blog/introductory-guide-to-markdown-for-documentation-writers/#:~:text=Some%20of%20the%20many%20uses,and%20StackExchange%2C%20among%20many%20others.)
 - [CommonMark](https://commonmark.org/)
 - [Markdown Flavours](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)
 - [Reddit Markdown](https://www.reddit.com/wiki/markdown/)
-
-
-
