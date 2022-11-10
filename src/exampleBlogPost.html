@@ -14,15 +14,12 @@
   <header-component></header-component>
 
   <div class="p-5">
+    <div id="blog-post"></div>
     <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
-    <div id="mycontent"></div>
     <script>
-
       var converter = new showdown.Converter();
       var md = `# header \n## subheader \n### section \nbody text`
-      var html = converter.makeHtml(md);
-      document.querySelector('#mycontent').innerHTML = html;
-
+      document.getElementById("blog-post").innerHTML = converter.makeHtml(md);
     </script>
   </div>
 </body>
