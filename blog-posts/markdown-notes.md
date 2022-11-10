@@ -1,52 +1,48 @@
 # An introduction to Markdown
 Markdown is a brilliant tool for quickly writing up universally accessible documents.
-Created by John Gruber and Aaron Schwartz in 2004, it stands as one of the most popular and widely used markup languages
-([site](https://en.wikipedia.org/wiki/Markup_language))
- around.
- Quick and simple formatting that can be read plainly makes it a great tool for many applications.
- Personally, I believe it's greatest strength to most people is through using it as a note-taking tool.
+Created by John Gruber and Aaron Schwartz in 2004, it stands as one of the most popular and widely used [markup languages](https://en.wikipedia.org/wiki/Markup_language) around.
+ It uses simple and intuitive formatting that can be easily read and understood.
 
-> "*A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions*"
-John Gruber, creator of Markdown.
-[Source](https://daringfireball.net/projects/markdown/syntax)
+> *"A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions"*
+John Gruber, creator of Markdown ([Source](https://daringfireball.net/projects/markdown/syntax))
 
-A Markdown file can be used for just a quick to do list, written and looked at exclusively in it's raw form.
-But it can also be a well organized and formatted ideas space, documentation and a range of other things once utilized correctly.
+A Markdown file can be used for just a quick to do list, written and used exclusively in it's raw form.
+But it can also be a well organized and formatted space for ideas, documentation and a range of other things once utilized correctly.
 
 ## Core Tools in the base Markdown Language
-Markdown comes with a myriad of syntax rules for organizing
+Markdown comes with a myriad of syntax rules for organizing.
 By far the three most common tools you will use when writing in Markdown are lists, links and headings.
 
 ![Lists, links and headings](../assets/img/headingsListsLinks.png)
 
-Adding these three components to your document is fast, easy and very legible.
-Typically when I write meeting notes, quick checklists or timeboxed research these 3 tools are all I use.
-And being able to simply copy and paste the text to another space (a key strength of all markup languages) removes any formatting issues experienced with more sophisticated text editors.
+Adding these three components to your document is fast, easy and legible.
+Typically when I write meeting notes, quick checklists or timeboxed research all I use are these 3 tools.
+Being able to simply copy and paste the text to another space (a key strength of all markup languages) removes formatting issues experienced with more sophisticated text editors.
 
 ## Markdown flavours
 
-As more people began to use Markdown for more bespoke documents, the demand for specific features in the language grew. Enter Markdown flavours - a range of extensions on the language increasing it's capabilities and utility.
+As more people began to use Markdown for specific needs, the demand for new features in the language grew. Enter Markdown flavours - a range of extensions on the language increasing it's capability and utility.
 
-When Markdown was released the syntax was not specified unambiguously. Often documents would render differently in different systems due to different interpretations of Markdown's rule set. [CommonMark](https://commonmark.org/) is a modern day solution to this ambiguity, specifying a standard specification for users of Markdown. This allowed easy transfer of Markdown to different systems and safe extensibility of the syntax.
+When Markdown was released the syntax was not specified unambiguously. Often documents would render differently across different systems due to the variety of Markdown's rule set interpretations. [CommonMark](https://commonmark.org/) is a modern day solution to this ambiguity, specifying a standard specification for users of Markdown. This allowed easy conversion of Markdown files to HTML across different systems and safe syntax extensibility.
 
- The most common example developers encounter these days is [the GitHub Markdown flavour](https://github.github.com/gfm/), a superset of the CommonMark specification. This flavour adds many useful changes relevant to the software world. A common example is highlighting for a range of programming languages within the Markdown code blocks. By simply adding the language to the start of the block, code snippets can be coloured and formatted as the language would.
+ As a developer an example you have most likely encountered before is the [GitHub Markdown flavour](https://github.github.com/gfm/), a superset of the CommonMark specification. This flavour adds many useful changes relevant to the software world, such as highlighting for a range of programming languages within a Markdown code blocks. By simply adding the language to the start of the block, code snippets can be coloured and formatted as the language would.
 
 ````
 ```java
 ```
 ````
 
-Other additional tools include [checklist items](https://github.github.com/gfm/#task-list-items-extension-) that can be interactively checked off post rendering and text strikethrough for clearly deprecating comments or wording without removing it. As a Markdown flavour, the GitHub flavour interpreter is able to successfully compile these features to HTML for use on GitHub.
+Other additional tools include [checklist items](https://github.github.com/gfm/#task-list-items-extension-) that can be interactively checked off and text strikethrough for clearly deprecating comments or wording without removing it. As a Markdown flavour, the GitHub flavour interpreter is able to successfully compile these additional features to HTML for use on GitHub.
 
 ## So if Gruber's Markdown syntax is extendable, what are people creating with it?
 
-Due to its ease of translation to HTML and readability, lot's of websites use it for messages, documentation, blog pages and more! Website's like Reddit store all posts and comments as Markdown files, giving users lots of choices for formatting their communication on the site. Even Scott Logic's own blog site uses Markdown for all the blog posts!
+Due to its ease of translation to HTML and readability, lot's of websites use it for messaging, documentation, blog posts and more! Website's like Reddit store all posts and comments as Markdown files, giving users lots of choices for formatting their communication on the site. Even Scott Logic's own blog site (with the Kramdown flavour) allows Markdown blog posts!
 
 ![Sites that use Markdown](../assets/img/sitesThatUseMarkdown.png)
 
-Markdown was designed to be compiled to HTML as it's primary function. This makes it great for static websites such as blogs and documentation. Static site builders like [Hugo](https://gohugo.io/) and [Jekyll](https://jekyllrb.com/) take this a step further, enabling easy and quick site building. With almost no handwritten HTML and Markdown files with content and styling rules, static websites can be quickly created with these tools.
+Markdown was designed to be compiled to HTML as it's primary function. This makes it great for static websites such as blogs and documentation. Static site builders like [Hugo](https://gohugo.io/) and [Jekyll](https://jekyllrb.com/) take this a step further, enabling easy and quick site building where pages can be designed and written straight from Markdown. With almost no handwritten HTML and mostly Markdown files with the styling rules and content, static websites can be quickly created using these tools.
 
-All GitHub repositories include a Markdown `README.md`. Alongside all other extra syntax rules included with the GitHub flavour, these Markdown files support additional community-made widgets, or "shields". These can display information such as page traffic, package versioning. A good example of one of these tools is the [visitors badge](https://www.visitorbadge.io/). For a look at lots set up shield applications see [shields.io](https://shields.io/).
+All GitHub repositories include a Markdown `README.md`. Alongside all other extra syntax rules included with the GitHub flavour, these Markdown files support additional community-made widgets, or "badges". These can display information such as page traffic and package versioning. A good example of one of these tools is the [visitors badge](https://www.visitorbadge.io/), simply a counter for the number of visits to a specific page. For examples on how people use badges see [shields.io](https://shields.io/).
 
 ![Java annotations README.md, see https://github.com/JetBrains/java-annotations](../assets/img/javaAnnotationsShieldsExample.png)
 
@@ -54,7 +50,7 @@ Creating content for the web isn't the only use people have for this markup lang
 
 ![Marp slide creation](../assets/gif/marp-example-slide-deck.gif)
 
-Ultimately your use of and interaction with Markdown will likely be dictated by where you see it in your use of digital online tools, be it on a Stack Overflow thread or personal blog. But I encourage you to at least explore some of the note taking tools that support Markdown (such as [Notion](https://www.notion.so/) and [Obsidian](https://obsidian.md/)). Once you've learnt the syntax, writing quick, widely supported and convertable content in Markdown is a snap.
+Ultimately your use of and interaction with Markdown will likely be dictated by what digital tools you use, be it on a Stack Overflow thread or personal blog page. Personally, I believe it's greatest strength to most people is through its use as a note-taking tool. I encourage you to explore some of the note taking tools that support Markdown, such as [Notion](https://www.notion.so/) and [Obsidian](https://obsidian.md/). These are great for organising notes, and even it you don't use/dislike a tool you can always move `.md` notes between them later. Once you've learnt the syntax, writing quick, widely supported and convertable content in Markdown is a snap.
 
 ## Sources & saved links
 - [Intro overview](https://document360.com/blog/introductory-guide-to-markdown-for-documentation-writers/#:~:text=Some%20of%20the%20many%20uses,and%20StackExchange%2C%20among%20many%20others.)
