@@ -1,3 +1,4 @@
+![John Gruber and the Markdown logo](../assets/img/gruberAndMarkdownIcon.png)
 # An introduction to Markdown
 Markdown is a brilliant tool for quickly writing up universally accessible documents.
 Created by John Gruber and Aaron Schwartz in 2004, it stands as one of the most popular and widely used [markup languages](https://en.wikipedia.org/wiki/Markup_language) around.
@@ -46,14 +47,8 @@ All GitHub repositories include a Markdown `README.md`. Alongside all other extr
 
 ![Java annotations README.md, see https://github.com/JetBrains/java-annotations](../assets/img/javaAnnotationsShieldsExample.png)
 
-Creating content for the web isn't the only use people have for this markup language. Using [Marp](https://github.com/marp-team/marp) users can create presentations from Markdown. Additional rules are included to dictate the structure and look of the presentation, with all the styling content and slide transition preferences contained within a single `.md`! It is also easy to create print ready documents of Markdown files in a variety of formats using conversion tooling like[Pandoc](https://pandoc.org/).
+Creating content for the web isn't the only use people have for this markup language. Using [Marp](https://github.com/marp-team/marp) users can create presentations from Markdown. Additional rules are included to dictate the structure and look of the presentation, with all the styling content and slide transition preferences contained within a single `.md`! It is also easy to create print ready documents of Markdown files in a variety of formats using conversion tooling like [Pandoc](https://pandoc.org/).
 
 ![Marp slide creation](../assets/gif/marp-example-slide-deck.gif)
 
 Ultimately your use of and interaction with Markdown will likely be dictated by what digital tools you use, be it on a Stack Overflow thread or personal blog page. Personally, I believe it's greatest strength to most people is through its use as a note-taking tool. I encourage you to explore some of the note taking tools that support Markdown, such as [Notion](https://www.notion.so/) and [Obsidian](https://obsidian.md/). These are great for organising notes, and even it you don't use/dislike a tool you can always move `.md` notes between them later. Once you've learnt the syntax, writing quick, widely supported and convertable content in Markdown is a snap.
-
-## Sources & saved links
-- [Intro overview](https://document360.com/blog/introductory-guide-to-markdown-for-documentation-writers/#:~:text=Some%20of%20the%20many%20uses,and%20StackExchange%2C%20among%20many%20others.)
-- [CommonMark](https://commonmark.org/)
-- [Markdown Flavours](https://github.com/commonmark/commonmark-spec/wiki/markdown-flavors)
-- [Reddit Markdown](https://www.reddit.com/wiki/markdown/)
