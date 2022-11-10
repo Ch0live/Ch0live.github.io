@@ -4,9 +4,14 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
+    @apply text-4xl;
+    @apply py-2;
   }
   h2 {
     @apply text-xl;
+    @apply py-2;
+  }
+  p {
+    @apply p-1;
   }
 }
