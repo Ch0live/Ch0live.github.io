@@ -7,7 +7,6 @@
   <link href="/dist/output.css" rel="stylesheet">
   <title>Ch0live</title>
   <script src="./components/header.js" type="text/javascript" defer></script>
-  <script src="./components/blogPost.js" type="text/javascript" defer></script>
 </head>
 
 <body class="bg-background-orange">
@@ -16,10 +15,12 @@
   <div class="p-5">
     <div id="blog-post"></div>
     <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
-    <script>
+    <script type="module">
       var converter = new showdown.Converter();
-      var md = `# header \n## subheader \n### section \nbody text`
-      document.getElementById("blog-post").innerHTML = converter.makeHtml(md);
+      fetch(`../blog/an-introduction-to-markdown.md`)
+        .then(response => response.text())
+        .then(text => converter.makeHtml(text))
+        .then(html => document.getElementById("blog-post").innerHTML = html);
     </script>
   </div>
 </body>
