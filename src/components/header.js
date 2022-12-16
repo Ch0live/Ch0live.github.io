@@ -15,8 +15,7 @@ class Header extends HTMLElement {
               <a class="text-grey-500 hover:text-black font-medium " href="./blog.html">Blog</a>
             </li>
             <li class="mx-4 mt-2">
-              <a class="text-grey-500 hover:text-black font-medium " href="./exampleBlogPost.html">Test-generated
-                blog</a>
+              <a class="text-grey-500 hover:text-black font-medium " href="./exampleBlogPost.html"><em>An Introduction to Markdown</em></a>
             </li>
           </ul>
         </nav>
