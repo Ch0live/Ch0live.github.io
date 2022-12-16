@@ -1,18 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,js}",
-    "./index.html"
-  ],
-  theme: {
-    screens: {},
-    colors: {
-      'background-orange': '#D4965A',
-      'loaf-mug-orange': '#CFAE61',
-      'loaf-mug-white': '#F4ECE4'
-    }, 
-    fontFamily: {},
-    extend: {}
-  },
-  plugins: [],
-}
+    content: ["./src/**/*.{html,js}", "./index.html"],
+    theme: {
+        screens: {},
+        colors: {
+            "background-orange": "#e1b684",
+            "loaf-mug-orange": "#CFAE61",
+            "loaf-mug-white": "#F4ECE4",
+        },
+        fontFamily: {},
+        extend: {},
+    },
+    plugins: [],
+};

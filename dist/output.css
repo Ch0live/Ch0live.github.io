@@ -554,7 +554,7 @@ p {
 
 .bg-background-orange {
   --tw-bg-opacity: 1;
-  background-color: rgb(212 150 90 / var(--tw-bg-opacity));
+  background-color: rgb(225 182 132 / var(--tw-bg-opacity));
 }
 
 .bg-loaf-mug-orange {
@@ -578,14 +578,14 @@ p {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-medium {
