@@ -12,6 +12,9 @@ class HeaderComponent extends HTMLElement {
             <li>
               <a href="./blogPost.html"><em>An Introduction to Markdown</em></a>
             </li>
+            <li>
+              <a href="./blogPostTwo.html"><em>Java to Javascript; A Workflow Analysis</em></a>
+            </li>
           </ul>
         </nav>
       `;
