@@ -2,8 +2,148 @@
 <html>
 
 <body>
-    <h1>Under construction</h1>
-    <p>To be converted soon!</p>
+    <h1>
+        Java to Javascript; A Workflow Analysis
+    </h1>
+    <p>
+        In my first 6 months of training as a developer I learnt how to create Java back-end applications. However
+        recently I have begun working on front end projects, requiring a whole new set of skills. Writing Javascript is
+        something I'm upskilling in and while I'm able to create webpages and unit test simple code using Jest I am less
+        aware of all the other available tooling within a front end ecosystem. So what tools are there around Javascript
+        that I may have seen Java equivalent versions of before?
+    </p>
+    <h2>
+        Writing code the TDD way
+    </h2>
+    <p>
+        With Java, adding to a code base is a case of adding or expanding functions and classes to implement new
+        functionality.
+        Lots of aspects of Java (such as interfaces and Java's type safety) remove the need for testing, but to
+        guarantee a codebase's health JUnit and Mockito have been my tools of choice for adding unit tests.
+        Using Spring MockMVC I've been able to mock endpoint request calls and responses for integration testing of
+        these MVC Spring Applications also.
+    </p>
+    <p>
+        In Javascript, unit testing is most commonly done through Jest.
+        It's declarative structure is a little confusing at first sight (`describe` then `it`?), but the concepts are
+        the same.
+        Instead of calling declared functions more often I find myself rendering React components and asserting on what
+        they return.
+        Cypress, a full fledged front end testing framework <!-- <check this>  --> is something that may tailor front
+        end visual testing better.
+        I'll add this to my "To learns".
+    </p>
+
+    <h2>
+        Assuring code formatting and order
+    </h2>
+
+    <p>
+        For styling code, the first tool I learnt to use was Checkstyle.
+        This utility will flag styling inconsistencies within your code according to a set of rules.
+        Most often pre defined rule sets are used, but rules can be added, reworded or removed entirely if desired.
+    </p>
+    <p>
+        The front end equivalent I have found (and seems to be standard everywhere for JS and TS) is Prettier. Prettier
+        works almost identically to Checkstyle - checking for formatting issues. VSCode includes a widely downloaded
+        extension to enforce Prettier rules on save, a very helpful utility for applying this tool. I imagine checkstyle
+        has the same sort of extension for IntelliJ, something I should look into.
+    </p>
+
+
+    <h2>Automated code assessment</h2>
+
+    <p>
+        My first encounter with a linter was PMD. It scans all changes like Checkstyle but checks for more nuanced
+        issues
+        within the logic of the code; more specifically areas of improvement. One time use declared variables or types
+        that
+        can be more specifically defined are flagged to the user. Spotting minor mistakes a human can make with machine
+        consistency can be (and is) quite useful.
+    </p>
+    <p>
+        For a front end linter I have learnt to use ESLint. A tool I had the luck of setting up myself for a client
+        project,
+        It flags code logic issues just like PMD does. It's `.eslintrc` file contains ruleset configuration and files to
+        ignore can be included in an `.eslintignore`. VSCode also supports some fantastic ESLint extensions that will
+        check
+        your code as you write (no need to run any commands at all!)
+    </p>
+
+
+    <h2>
+        Finding bugs
+    </h2>
+
+    <p>
+        Like the Mark II machine that
+        <a href="https://www.computerhistory.org/tdih/september/9/">required a moth removed</a> , I
+        too
+        need to be able to debug my work. IntelliJ includes a "debug" mode that, once understood well,
+        is revolutionary to understanding issues in code. I'd compare fixing Java code problems before I used this debug
+        tool to
+        solving a crime with no evidence. Adjusting code blindly, perhaps throwing a `console.log` here and there,
+        hoping
+        one of the attempts will unearth the issue. Seeing all your variables state at any given time, being able to
+        step
+        over & through line by line allows a developer to find the exact point everything goes awry and it's brilliantly
+        useful.
+    </p>
+
+    <p>
+        I've learnt a lot about Google Chrome's devtools for fixing CSS issues, but not so much for the Javascript logic
+        in my front-end work. And as much as I rave about the usefulness of a debugger in Java, I am still yet to use
+        one in
+        Javascript. I've definitely felt the need for one many times, but I'm yet to have the opportunity, remote
+        desktop
+        permission, time, energy (or whatever excuse I feel like using at time time) to explore how to use one. This
+        will
+        definitely be at the top of my list of things to explore in the near future, my writing of this paragraph is
+        making
+        that very clear!
+    </p>
+
+    <h2>Dependency management</h2>
+
+    <p>
+        I have experienced the benefits and difficulties of using Maven and Gradle. Although I must state I have never
+        set
+        any of these build-automation tools up, I do feel they simplify the area I've worked the most with - package
+        management. Adding Checkstyle and PMD (something a team member did on a recent project) also seems very
+        painless.
+    </p>
+
+    <p>
+        For front end package management I've used Node, more specificaly it's package manager npm. Creating config
+        through
+        terminal import commands makes quickly setting up projects easy, plus it seems almost every sort of dependency
+        you
+        could want is posted to nodes package registry. I have no desire to look for an alternative tool, this one seems
+        perfect.
+    </p>
+
+    <h2>
+        So... What's missing?
+    </h2>
+
+    <p>
+        Exploring the equivalent front and back end tooling has highlighted some things I should look into learning
+    </p>
+    <ol>
+        <li>
+            <b>A front end debugger.</b>
+            I definitely clarified in my head the benefit of a debugger in this article.
+            Now realising I'm yet to learn how to debug Javascript has
+        </li>
+        <li>
+            <b>More extensive testing tooling.</b>
+            With only expeience in Jest I should check out what else I can use to test my code.
+        </li>
+        <li>
+            <b>Checkstyle & PMD Extensions.</b>
+            Perhaps all my envy for the convenience of the Prettier and ESLint extensions can be resolved?
+        </li>
+    </ol>
 </body>
 <style>
     body {
@@ -35,7 +175,8 @@
         margin-inline-end: 0px;
     }
 
-    li {
+    li,
+    ol {
         color: #c9c9c9;
     }
 
