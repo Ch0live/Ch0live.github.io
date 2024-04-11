@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>
+        How to make ChatGPT do anything you want
+    </h1>
+
+    <h2>
+        Introduction
+    </h2>
+    <p>
+        OpenAI released an early demo of ChatGPT on the 30th of November 2022. Since then, it has propelled the general
+        public’s awareness of the power of Large Language Models (LLM). In other words, ChatGPT was the first viral
+        AI-powered ChatBot. These Generative Pre-Trained Transformers take a prompt (a block of written text with no
+        other context) and will attempt at producing a coherent written response. GPT models are trained on conversation
+        data to learn the most appropriate response to whatever new prompt they are served, but it should be noted that
+        the training data they have been built from is all they know. They are often compared to parrots due to this
+        behavioural trait, echoing previously seen conversations to construct sensible responses.
+    </p>
+    <p>
+        By itself a tool that can do this is very powerful. It's currently commonplace on social media to see posts
+        around using models like GPT-3.5 (the current ChatGPT model used "under the hood") to generate templates for
+        emails, social media posts, poems, birthday party ideas and all sorts of other supposedly creative ideas.
+        However, the current limitation of most of these models is integration into other systems and knowledge bases. A
+        pure LLM won't know the result of the football game last week or what Elon Musk last posted. Achieving this is
+        something the large tech companies are actively working on, but it can also be achieved by ourselves with very
+        little code!
+    </p>
+    <p>
+        In this article I will be using my personal project <a
+            href="https://github.com/Ch0live/pundit-bot">PunditBot</a> as an example of how this can work, but the
+        concept can be applied to anything. To keep things as simple as possible, let’s talk about achieving the goal we
+        mentioned before - finding out the result of the football game last week.
+    </p>
+
+    <h2>
+        Using OpenAI's API
+    </h2>
+
+    <p>
+        Currently if we ask ChatGPT about this it admits it doesn't have access to current data around football games -
+        as we've established the model doesn't actively search the web for data to integrate into its response.
+    </p>
+
+    <img src="../assets/img/askingChatGPT.png" alt="Asking ChatGPT about the game">
+
+    <p>
+        We need to build new logic around the call to OpenAI's GPT model. Fortunately, OpenAI also offers requests
+        straight to their model through an API, billed to your account (billing is done by the number of tokens used in
+        each prompt and generated in each response, where a token can be thought of as a word or part of a word). Now we
+        can write code (here is a short python script as an example stolen directly from <a
+            href="https://platform.openai.com/docs/quickstart?context=python">OpenAI's Quickstart tutorial</a> to call
+        the API with our prompt.
+    </p>
+
+    <p style="word-break: normal; font-family: monospace;">
+        ChatCompletions<br>
+        from openai import OpenAI<br>
+        client = OpenAI()<br>
+        <br>
+        completion = client.chat.completions.create(<br>
+        &nbsp;&nbsp;model="gpt-3.5-turbo",<br>
+        &nbsp;&nbsp;messages=[<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{"role": "system", "content": "You are PunditBot, aimed at reporting on football
+        games"},<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{"role": "user", "content": "Who won the man city arsenal game last weekend?"}<br>
+        &nbsp;&nbsp;]<br>
+        )<br>
+        <br>
+        print(completion.choices[0].message)<br>
+    </p>
+
+    <p>
+        When using the `/v1/chat/completions` endpoint you can specify both a system prompt (response context for the
+        LLM) and a user prompt (the actual prompt given, often called utterance).
+    </p>
+
+    <h2>
+        Building from others' work
+    </h2>
+
+    <p>
+        As with all programming endeavours, let's aim not to re-invent the wheel and use an example project to use as a
+        template for our own. In PunditBot I used
+        <a href="https://github.com/docker/genai-stack">the docker genai-stack project</a>.
+        Note that there are many other repositories that can be great for starting a project like this from, this is
+        just the one I chose.
+    </p>
+
+    <p>
+        This repository contains other interesting tools that utilise an LLM model, but most importantly it has a Vite
+        front end application connected to a FastAPI backend, with configuration we can plug our new OpenAI API key
+        into.
+    </p>
+
+    <p>
+        So now we have our own version of ChatGPT - a chat bot interface that uses an LLM for generated answers. A
+        simplified diagram of the app architecture would look like this.
+    </p>
+
+    <img src="../assets/img/basicPunditBot.png" alt="GenAI template architecture">
+
+    <h2>
+        Creating a bespoke chatbot
+    </h2>
+
+    <p>
+        Our app is still unable to report on the game last week. However, our app now has a backend layer we can tailor
+        to whatever needs we wish. One way to implement this logic could be the following
+    </p>
+
+    <ol>
+        <li>
+            Take the question from the user and extract the football teams mentioned
+        </li>
+        <li>
+            Look up the last game played between the teams mentioned
+        </li>
+        <li>
+            Return a coherent response to the user containing that game data we extracted in step 2.
+        </li>
+    </ol>
+
+    <p>
+        To complete these steps, we are going to build an extractor function to identify the teams mentioned, a lookup
+        function to find the data for the teams' last game and a summariser function to bundle up the data into a nicely
+        written response. Exploring step 2 isn't of relevance to this article as it does not involve an LLM. We could
+        use a local database and query it in SQL, or a tool that searches the web or requests data from football API for
+        the game results. Either way this functionality is not novel or new; let's instead explore steps 1 and 3.
+    </p>
+
+    <h2>
+        Creating an extractor method
+    </h2>
+
+    <p>
+        The method to extract the specific football teams from a user’s utterance could be overly complex, one way to
+        achieve this could be to search through a list of pre-defined keywords. However, this is a task LLMs are
+        surprisingly good at. See the following prompt.
+    </p>
+
+    <p style="word-break: normal; font-family: monospace;">
+        You are an expert extraction algorithm tasked at extracting what football match (or matches) the user wants
+        to<br>
+        know about. You must return the 2 football clubs that the user has asked about from the question. Return the
+        2<br>
+        clubs in a comma separated list.<br>
+        <br>
+        Football clubs must be referred to using one of the following names<br>
+        <br>
+        - Arsenal FC<br>
+        - Brighton & Hove Albion FC<br>
+        - Chelsea FC<br>
+        - Crystal Palace FC<br>
+        - Everton FC<br>
+        - Southampton FC<br>
+        - Watford FC<br>
+        - West Bromwich Albion FC<br>
+        - Manchester United FC<br>
+        - Newcastle United FC<br>
+        - AFC Bournemouth<br>
+        - Burnley FC<br>
+        - Leicester City FC<br>
+        - Liverpool FC<br>
+        - Stoke City FC<br>
+        - Swansea City AFC<br>
+        - Huddersfield Town AFC<br>
+        - Tottenham Hotspur FC<br>
+        - Manchester City FC<br>
+        - West Ham United FC<br>
+        <br>
+        For example, for the question<br>
+        <br>
+        "What happened the last time arsenal played spurs?"<br>
+        <br>
+        You should return<br>
+        <br>
+        "Arsenal FC, Tottenham Hotspur FC"<br>
+        <br>
+        If you do not know the value of an attribute asked to extract, return null for the attribute's value.<br>
+        <br>
+        The question: {question}<br>
+    </p>
+
+    <p>
+        This prompt is engineered to ask the LLM for a specific outcome - find from the question provided two football
+        teams. The specific football clubs that should be returned are listed (this data is from Premier League teams
+        during the 2017/18 season in case you are wondering why Huddersfield Town are there). There is also an example
+        of One-Shot Learning - where an example model answer has been provided. Finally, it is mentioned that if the
+        answer cannot be found the LLM should return null and not hallucinate a response (an LLM returning
+        misinformation confidently as fact is often described as the LLM hallucinating).
+    </p>
+
+    <p>
+        This works surprisingly well! Beyond clear questions specifying the names of the teams, GPT-3.5 was able to
+        identify the two teams involved in the Manchester Derby and could even understand "the blues" as Chelsea FC.
+    </p>
+
+    <h2>
+        Creating a summariser method
+    </h2>
+
+    <p>
+        After step 1 and step 2 we need to return to the user the game data found in a Chat Bot style response. This
+        again is remarkably simple using an LLM, see the example prompt below.
+    </p>
+
+    <p style="word-break: normal; font-family: monospace;">
+        You have been asked to find the results of matches between the following Premier League football teams<br>
+        <br>
+        here is data about the games in a python dictionary format<br>
+        <br>
+        {matchData}<br>
+        <br>
+        Summarise a response to the question using the data listed above.<br>
+        Only use data listed above. <br>
+        Do not infer any data outside of what is listed above.<br>
+    </p>
+
+    <p>
+        Like the extractor prompt, the content within the curly brackets will contain the actual match data. In my
+        example I injected the string representation of a python dictionary containing key value pairs of game data
+        (half-time score, home team, date of the match, etc.). We heavily emphasise in the end of the prompt to only use
+        mentioned data to deter the model from hallucinating.
+    </p>
+
+    <h2>
+        Wire it all up
+    </h2>
+
+    <p>
+        Now we have all 3 steps, connecting them all together gives us the following architecture.
+    </p>
+
+    <img src="../assets/img/completePunditBot.png" alt="PunditBot architecture">
+
+    <p>
+        With the LLM's new ability to extract the teams mentioned in the user’s utterance, find the data related to
+        those teams and bundle it up in a well written response we can now successfully ask about a specific football
+        game. Note in the screenshot below the data has come from a game in the 2017/18 season - for step 2. I have used
+        a
+        <a href="https://github.com/atriantus/Neo4j-Graph-for-EPL-data">dataset of games from that period</a>
+        in a Neo4j graph database.
+    </p>
+
+    <img src="../assets/img/askingPunditBot.png" alt="Asking PunditBot about the game" style="height: 75%">
+
+    <p>
+        Now there are obvious flaws with the current version I am showcasing above.
+    </p>
+
+    <ul>
+        <li>
+            As I am using a static database of games from just 1 season PunditBot is only able to retrieve data from
+            those games to find out the "last" game that occurred.
+            <ul>
+                <li>This can be solved by adding a better way of getting the data.</li>
+            </ul>
+        </li>
+        <li>
+            The UI includes unnecessary information around if "RAG mode" is enabled or not or what model is being used.
+            <ul>
+                <li>These are just parts of the UI that came with <a href="https://github.com/docker/genai-stack">the
+                        docker genai-stack project</a> I based the project from and can be cleaned up.</li>
+            </ul>
+        </li>
+        <li>
+            The response is poorly formatted and hard to read.
+            <ul>
+                <li>Some tweaking of the summariser prompt could be used to enforce new lines between the 2 game
+                    reports, plus other visual adjustments if necessary.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        Ultimately, this article is concerned with the application of utilising an LLM with external tool. What has been
+        proven here is it is possible to take an LLM model like GPT-3.5 and add new functionality around it to make it
+        more useful for specific applications. There are frameworks (such as <a
+            href="https://www.langchain.com/">LangChain</a>)
+        that are entirely based on this idea. The idea could be taken a lot further by plugging in more tools - for
+        example we could return a video highlight of the winning goal to both games and render that beneath the game
+        reports.
+    </p>
+
+    <p>
+        With some surrounding logic it's possible to achieve a lot more functionality with existing LLMs. I hope you
+        found this interesting and potentially inspiring into what's possible in this area of the AI space.
+    </p>
+
+    <a href="https://Ch0live.github.io/home">Navigate home</a>
+
+</body>
+<style>
+    body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: #141414;
+        width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #ffffff;
+    }
+
+    p,
+    a {
+        color: #c9c9c9;
+    }
+
+    p {
+        color: #c9c9c9;
+        display: block;
+        margin-block-start: 2em;
+        margin-block-end: 2em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    li,
+    ol {
+        color: #c9c9c9;
+    }
+
+    img {
+        width: 100%;
+        display: flex;
+    }
+</style>
+
+</html>
