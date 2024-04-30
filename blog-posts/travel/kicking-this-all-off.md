@@ -15,6 +15,8 @@ Australia is just so far from the UK it has to be a stop on this globetrotting t
 New Zealand is the final key place I'm keen to go. With family on the southern island I'm greatly looking forward to reconnecting with and, again, beautiful "tramping" trails to walk, it's another must-do while I'm away. As a fan of all things Tolkien, be sure I'll be visiting Hobbiton.
 
 
-That's all for now. With Visas and flights almost sorted it's all the little things to get ready. I'm hoping to pick up my perfect pair of walking shoes for the trip tomorrow, but as this is my 5th trip to the shops for them I may again get cold feet. Thanks mum for the chest bag to hold my valuables in, I think it looks quite fashionable still. Plus I don't want my Lidl bum bag in all my photos, I know that wont be as funny to wear as it is now when I'm older.
+That's all for now. With Visas and flights almost sorted it's all the little things to get ready. I'm hoping to pick up my perfect pair of walking shoes for the trip tomorrow, but as this is my 5th trip to the shops for them I may again get cold feet. 
+
+Thanks mum for the chest bag to hold my valuables in, I think it looks quite fashionable still. Plus I don't want my Lidl bum bag in all my photos, I know that wont be as funny to wear as it is now when I'm older.
 
 Ch0live out.
