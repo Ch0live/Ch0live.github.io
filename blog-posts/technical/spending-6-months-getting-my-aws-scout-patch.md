@@ -1,0 +1,21 @@
+### Spending 6 months getting my AWS Scout Patch
+
+- First being informed of the qualification through work
+- First seeing cloud technologies through Pivotal Cloud Foundry, learning about environments and transitioning new changes through from the lowest to the highest
+- Purchased course in April with practice exam papers
+- Ignoring starting it for about 4 months
+- Starting it; Completing a handful of 5-10 minute lectures every few weeks.
+- Obsessively took note of everything on each slide, his slides presented were like detailed notes, and often all that was said over the slides was a repeat of what was written
+- Screenshots occasionally taken from the course slides for diagrams.
+- Break over Christmas, having lots more time to work on the course. Decided to try and finish it. Got to about 60% before I had to end the Christmas break.
+- Did parts of it on and off throughout the spring.
+- Finally booked my exam. Booked for 2 days before I leave for my sabbatical break. Booked in for motivation.
+- Studied a good number of evenings throughout April and May.
+- Finished the course the Fri morning before the exam (on the following Tuesday)
+- Did 1 paper that afternoon - failed with 38%
+- Had plans all weekend
+- Monday afternoon did more past papers and study until bedtime
+- Went to my in-person exam in Bath
+- Sat with at 1 point 3 others in a tiny box office where we all silently completed our exams (possible all the same, probably more likely completely different!)
+- Walked away and back to Bristol feeling 50/50 about it - could answer most questions pretty confidently but there were a definite 5 or so I had to "guestimate".
+- Received my results the next day, a pass! Perfect timing for my break from work.
