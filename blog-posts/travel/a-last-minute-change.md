@@ -1,0 +1,19 @@
+Todays the day! As I write this I am on a train heading straight to London. A friend of mine has very kindly let me stay at his family home nearby to the Airport, saving me what would be a hundred or so pounds - many thanks to you! Tomorrow the journey will truly begin and by the end of the day I will have touched down on American soil.
+
+In the past week I've had non-stop sorting on my plate. Like any deadline, moving always ends up being a last minute manic couple of days running rubbish to the tip, cleaning the house and most importantly moving all your personal possessions out of the property. For me, the manic move day was Tuesday the 4th. I was fortunate enough that my sister was able to come up for the day with her big estate car, which of course we believe can move all of my stuff home in 1 go. From 6am to midnight the day consisted of deconstructing furniture, packing up everything I call "my stuff", driving twice to the tip and (in the end) twice back to my family home I had fully said goodbye to Bristol. After cleaning my room I did my best to help my flatmates with all the communal chores, but as always is the way when you're the first to move out, I'm sure I didn't do the quarter I should have fairly done. Apologies guys, I'll buy you a pint when I'm back to say thank you (assuming our deposits are returned of course!).
+
+Sitting in my sisters living room on the following Wednesday I unpacked and looked at all of the things I've decided are crucial to my trip. Sets of clothes, chargers, pocket things like my wallet phone and passport and a small bag of toiletries is pretty much all I'm packing. Things like suncream I'm just going to hope isn't $50 per bottle in the USA. However after a chat with my Dad it suddenly became clear how stupid taking a cabin bag suitcase would be. I justified the decision for the last few months thinking "it'll be fine, everywhere I'm going will have concrete paths and I won't have to carry my clothes!" and "I save loads by using no hold luggage on my flights". But in a last minute change I am now taking my old Ten Tors rucksack, packed tightly using the straps around it and some of my sisters packing cubes from her travels (thank you again! If anyone is considering backpacking get yourself some packing cubes they're brilliant for shrinking clothes and organising your bag). In it's dimensions it is only 0.5cm over the maximum length allowed for a cabin bag. Fingers crossed the airport staff just let me on with it.
+
+![[no-more-roller-suitcase.png]]
+
+My final few days I spent with my partner. Aware that this trip has been something I've wanted to do for years she has been nothing short of amazing in attitude towards it. On our last evening we treated ourselves to only the best of the best for dinner - a £12 M&S dinner deal of pizzas and sides. We go for pizza together a lot, so it seemed appropriate as a last supper for us.
+
+![[the-last-supper.png]]
+
+Afterwards we went for a final stroll down the river at sunset. Thursday was a great day for weather and in the early summer heat it was a beautiful walk. Here's a photo of one of the paths sadly slightly flooded, changing our walk home. On the other hand, it made for a very pretty photo.
+
+![[village-river-walk.png]]
+
+And that brings me to today. Wake up, pick up from a friend, cuppa tea at his near the train station and after a short walk to the platform I'm now flying on the tracks into central London.
+
+I've got to go - the ticket lady wants my ticket.

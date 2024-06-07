@@ -1,4 +1,4 @@
-Hello! With only a little over a month until I go travelling I wanted to get ahead and create this space within my blog site for exclusively travel related posts. If all goes to plan (I'm not too tired, everything gets stolen, etc.) I hope to post about what I'm up to while away.
+Hello! With only a little over a month until I go traveling I wanted to get ahead and create this space within my blog site for exclusively travel related posts. If all goes to plan (I'm not too tired, everything gets stolen, etc.) I hope to post about what I'm up to while away.
 
 
 I will be visiting the USA, Japan, Australia and New Zealand while I'm away.
