@@ -1,48 +1,50 @@
+from io import TextIOWrapper
 import os
-import logging
-import jinga2
+import re
+from jinja2 import FileSystemLoader, Environment, Template
 
-# A script to convert my markdown files into html
+env = Environment(loader=FileSystemLoader("./templates"))
 
-article_name = "kicking-this-all-off"
-article_category = "travel"
-path_to_article_md_file = os.path.join(os.getcwd(), "blog-posts", article_type, article_name + ".md")
 
-article_md_file = open(path_to_article_md_file, "r")
-article_html_body = ""
+def write_to_file(path: str, html_file: str):
+    with open(path + ".html", 'w') as file:
+        file.write(html_file)
 
-def generate_html_file(name: string, category: string, path: string):
-    # Create article from md file
-    for line in article_md_file:
-        if (line[0:1] == "# "):
-            article_html_body.append(
-                # load h1.j2 template
-            )
-        elif (line[0:2] == "## "):
-            article_html_body.append(
-                # load h2.j2 template
-            )
-        elif (line[0:3] == "### "):
-            article_html_body.append(
-                # load h3.j2 template
-            )
-        elif (line[0:2] == "!["):
-            article_html_body.append(
-                # load img.j2 template
-            )
-        elif (regex("[a-z][A-Z][1-9]", line[0])):
-            # TODO: scan line for "[]()" links
-            article_html_body.append(
-                # load p.j2 template
-            )
-        else:
-            logging.info(f"\nError: Unable to scan line\n{line}")
-        
-        # Append newline between each element
-        article_html_file.append("")
 
-    # Wrap article with required HTML tags
-    # jinga_templates.load(article_html_file_wrapper, body=article_html_file)
+def get_template(name: str) -> Template:
+    return env.get_template(f"{name}.j2")
 
-    # Write article to html file
-    # open(f"{article_name}.html")
+
+def interpret_content(line: str) -> str:
+    if line[0:2] == "# ":
+        return get_template("block").render(type="h1", content=line[2:])
+    if line[0:3] == "## ":
+        return get_template("block").render(type="h2", content=line[3:])
+    if line[0:4] == "### ":
+        return get_template("block").render(type="h3", content=line[4:])
+    if re.search("\!\[\[.*", line):
+        return get_template("img").render(filename=line[3:-2])
+    else:
+        return get_template("block").render(type="p", content=line)
+
+
+def interpret_md(md_file: TextIOWrapper) -> str:
+    html_file_body = []
+    for line in md_file.readlines():
+        if re.search("^\s*$", line):
+            continue
+        html_file_body.append(interpret_content(line.strip()))
+    return html_file_body
+
+
+def generate_html_from_md(name: str, category: str):
+    path = os.path.join(os.getcwd(), "blog-posts", category, name)
+    md_file = open(path + ".md", "r")
+    html_file_body = interpret_md(md_file)
+    html_file = get_template("wrapper").render(body=html_file_body)
+    write_to_file(path, html_file)
+    print(f"written to path {path}")
+
+
+if __name__ == "__main__":
+    generate_html_from_md("charging-and-walking", "travel")
