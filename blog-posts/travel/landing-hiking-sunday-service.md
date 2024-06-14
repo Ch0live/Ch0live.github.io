@@ -4,7 +4,6 @@ Hello again. I wanted to share this photo of Nova Scotia (I believe) from above.
 
 ![[flight-above-canada.png]]
 
-
 And I've landed! I'm writing this update retrospectively from a few days onwards, but in hindsight going through border control and getting picked up went very smoothly. Unlike JFK airport which is almost a small city by itself, Steward International is very small. Like 1 plane arriving every few hours small. I looked out the window and saw private propeller planes on the side of the runway while we taxied to one of the only disembarking spots. Border control, probably as a result of the lack of people going through it, was also very fast.
 
 "Reason for your visit"
