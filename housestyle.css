@@ -66,3 +66,38 @@ tg {
     text-align: left;
     vertical-align: top
 }
+
+.kanjiname {
+    background: #ffffff;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #141414;
+}
+
+.kanjiblock {
+    background: #ffffff;
+    border-radius: 2%;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #141414;
+    font-size: x-large;
+}
+
+.maoriname {
+    border-radius: 5%;
+    margin-inline: 20px;
+    height: 1;
+}
+
+.maoriblock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
