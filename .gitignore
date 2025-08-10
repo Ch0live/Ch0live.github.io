@@ -3,3 +3,7 @@ node_modules
 package-lock.json
 package.json
 .venv
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
