@@ -19,14 +19,13 @@
         Our host owned a beautiful ...
     </p>
     <img src="../../assets/img/los-angeles/IMG_5060.jpeg" alt="Downtown Pasadena">
+    <h2>
+        A walk by the Hollywood sign
+    </h2>
     <p>
         Insert content here
     </p>
     <img src="../../assets/img/los-angeles/IMG_5071.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>
-    <img src="../../assets/img/los-angeles/IMG_5073.mov" alt="!?">
     <p>
         Insert content here
     </p>
@@ -45,19 +44,21 @@
     <img src="../../assets/img/los-angeles/IMG_5152.jpeg" alt="!?">
     <p>
         Insert content here
-    </p>
+    </p>    
+    <h2>
+        Downtown Hollywood
+    </h2>
     <img src="../../assets/img/los-angeles/IMG_5203.jpeg" alt="!?">
     <p>
-        Insert content here
-    </p>
-    <img src="../../assets/img/los-angeles/IMG_5228.jpeg" alt="!?">
-    <p>
-        Insert content here
+        Insert content here, ?! Add more (at least 1 image) of us going in shops here, maybe the Acai bowl place?
     </p>
     <img src="../../assets/img/los-angeles/IMG_5232.jpeg" alt="!?">
     <p>
         Insert content here
     </p>
+    <h2>
+        The Bladerunner Building
+    </h2>
     <img src="../../assets/img/los-angeles/IMG_5238.jpeg" alt="!?">
     <p>
         Insert content here
@@ -67,14 +68,17 @@
         Insert content here
     </p>
     <img src="../../assets/img/los-angeles/IMG_5247.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>
-    <img src="../../assets/img/los-angeles/IMG_5258.jpeg" alt="!?">
+    <h2>
+        The Last Bookshop
+    </h2>
     <p>
         Insert content here
     </p>
     <img src="../../assets/img/los-angeles/IMG_5260.jpeg" alt="!?">
+    <p>
+        Insert content here
+    </p>
+    <img src="../../assets/img/los-angeles/IMG_5258.jpeg" alt="!?">
     <p>
         Insert content here
     </p>
@@ -94,30 +98,38 @@
     <p>
         Insert content here
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5275.jpg" alt="!?">
+    
+    <h2>Cloud Coffees at Tilt</h2>
     <p>
         Insert content here
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5277.jpeg" alt="!?">
+    <div class="gallery">
+        <div class="big-image">
+            <img id="mainImage" src="../../assets/img/los-angeles/IMG_5277.jpeg" alt="Tilt coffee shop, downtown LA">
+        </div>
+
+        <div class="thumbnails">
+            <img src="../../assets/img/los-angeles/IMG_5277.jpeg" alt="Coffee 1"  
+            onclick="putAsMainImage(this)">
+            <img src="../../assets/img/los-angeles/IMG_5287.jpeg" alt="Coffee 2" onclick="putAsMainImage(this)">
+            <img src="../../assets/img/los-angeles/IMG_5283.jpeg" alt="Coffee 3" onclick="putAsMainImage(this)">
+            <img src="../../assets/img/los-angeles/IMG_5285.jpeg" alt="Coffee 4" onclick="putAsMainImage(this)">
+        </div>
+
+        <script>
+            function putAsMainImage(thumb) {
+                const mainImage = document.getElementById("mainImage");
+                mainImage.src = thumb.src;
+            }
+        </script>
+    </div>
     <p>
         Insert content here
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5283.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>
-    <img src="../../assets/img/los-angeles/IMG_5285.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>
-    <img src="../../assets/img/los-angeles/IMG_5285.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>
-    <img src="../../assets/img/los-angeles/IMG_5287.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>
+
+    <h2>
+        LA Town Hall Viewing platform ?!
+    </h2>
     <img src="../../assets/img/los-angeles/IMG_5289.jpeg" alt="!?">
     <p>
         Insert content here
@@ -139,6 +151,10 @@
         Insert content here
     </p>
     <img src="../../assets/img/los-angeles/IMG_5307.jpeg" alt="!?">
+    <h2>
+        Venice Beach
+    </h2>
+    <img src="../../assets/img/los-angeles/IMG_5275.jpg" alt="!?">
     <p>
         Insert content here
     </p>
@@ -164,10 +180,41 @@
         Definitely should cut down on images.
     </p>
     
-
-    <!-- TODO: Add link to next article -->
+    <!-- TODO: ?! Add link to next article -->
     <a href="../../home.html">Navigate home</a>
 
 </body>
 
 </html>
+
+<style>
+.gallery {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.big-image img {
+  width: 100%;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.thumbnails img {
+  width: 20%;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+</style>
