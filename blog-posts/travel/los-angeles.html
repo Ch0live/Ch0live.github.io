@@ -8,7 +8,7 @@
 <body>
     <a href="../../home.html">Navigate home</a>
     <p>
-        <i>6th to !?DATE August</i>
+        <i>6th to 10th August</i>
     </p>
     <h1>
         Los Angeles
@@ -16,35 +16,50 @@
     <p>
         After hours of driving we finally arrive in Pasadena where we stayed for 5 days. 
         As a cost-effective choice we booked an AirBnB where we stayed in a spare bedroom of someones house. 
-        Our host owned a beautiful ...
+        Our host owned a beautiful house a few roads up the hill from the main high street of Pasadena and was very accommodating. 
+        Getting to the house late in the evening we went for a short drive into town for some dinner and went quickly to bed. 
     </p>
     <img src="../../assets/img/los-angeles/IMG_5060.jpeg" alt="Downtown Pasadena">
     <h2>
         A walk by the Hollywood sign
     </h2>
     <p>
-        Insert content here
+        Day 1 was planned around exploring the Hollywood area. 
+        We're talking the stereotypical spots of LA, with arguably the most iconic sight of this town, the Hollywood sign. 
+        there is a walk between the neighborhoods here which made for a nice way to see the area in view of the sign.
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5071.jpeg" alt="!?">
     <p>
-        Insert content here
+        This park by the beginning of the walk was full of people taking photos and recording videos, a common sight in this town. 
+        I'm in no way saying we didn't also take a few photos, but by no means did we milk this view to the extend some were. 
+        I'll never get use to people recording TikTok's...
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5076.jpeg" alt="!?">
+    <img src="../../assets/img/los-angeles/IMG_5071.jpeg" alt="Lake Hollywood Park">
     <p>
-        Insert content here
+        I couldn't help taking a photo of this beautiful car. 
+        Reverse image search has revealed this to be a 1973 Cadillac Eldorado convertible, and I am certain that's what it is as my search just found this exact car - it's a <a href="https://www.getyourguide.com/en-gb/los-angeles-l179/discover-la-in-a-1973-cadillac-eldorado-convertible-t658954/?visitor-id=WSQ89DO8FI07NNZXVHVAPFNYTDA9UM9Q&locale_autoredirect_optout=true&utm_medium=sharing&utm_campaign=activity_details_desktop">bookable experience on GetYourGuide</a>! 
+        Not that I had any idea of this when I was there at the time.
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5119.jpeg" alt="!?">
+    <img src="../../assets/img/los-angeles/IMG_5076.jpeg" alt="1974 Cadillac">
     <p>
-        Insert content here
+        The walk was hot, dry and exactly like it is in the movies. 
+        This city has a strong familiarity that I expected but was still a bit baffled by. 
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5140.jpeg" alt="!?">
+    <div class="gallery">
+        <div class="big-image">
+            <img id="mainImage" src="../../assets/img/los-angeles/IMG_5119.jpeg" alt="Walk by the Hollywood sign">
+        </div>
+
+        <div class="thumbnails">
+            <img src="../../assets/img/los-angeles/IMG_5119.jpeg" alt="Walk photo 1"  
+            onclick="putAsMainImage(this)">
+            <img src="../../assets/img/los-angeles/IMG_5140.jpeg" alt="Walk photo 2" onclick="putAsMainImage(this)">
+        </div>
+    </div>
     <p>
-        Insert content here
+        After our short hike we drove up to the Griffith Observatory, a place (like many landmarks in LA) I recognize from playing GTA 5. 
+        We weren't able to go inside but the view from the small walkway around the front showed the whole city and ocean in the distance.
     </p>
-    <img src="../../assets/img/los-angeles/IMG_5152.jpeg" alt="!?">
-    <p>
-        Insert content here
-    </p>    
+    <img src="../../assets/img/los-angeles/IMG_5152.jpeg" alt="The Griffith Observatory"> 
     <h2>
         Downtown Hollywood
     </h2>
@@ -115,13 +130,6 @@
             <img src="../../assets/img/los-angeles/IMG_5283.jpeg" alt="Coffee 3" onclick="putAsMainImage(this)">
             <img src="../../assets/img/los-angeles/IMG_5285.jpeg" alt="Coffee 4" onclick="putAsMainImage(this)">
         </div>
-
-        <script>
-            function putAsMainImage(thumb) {
-                const mainImage = document.getElementById("mainImage");
-                mainImage.src = thumb.src;
-            }
-        </script>
     </div>
     <p>
         Insert content here
@@ -186,6 +194,13 @@
 </body>
 
 </html>
+
+<script>
+    function putAsMainImage(thumb) {
+        const mainImage = document.getElementById("mainImage");
+        mainImage.src = thumb.src;
+    }
+</script>
 
 <style>
 .gallery {
