@@ -45,14 +45,14 @@
         This city has a strong familiarity that I expected but was still a bit baffled by. 
     </p>
     <div class="gallery">
-        <div class="big-image">
-            <img id="mainImage" src="../../assets/img/los-angeles/IMG_5119.jpeg" alt="Walk by the Hollywood sign">
+        <div class="main-image">
+            <img id="hollywood" src="../../assets/img/los-angeles/IMG_5119.jpeg" alt="Walk by the Hollywood sign">
         </div>
 
         <div class="thumbnails">
             <img src="../../assets/img/los-angeles/IMG_5119.jpeg" alt="Walk photo 1"  
-            onclick="putAsMainImage(this)">
-            <img src="../../assets/img/los-angeles/IMG_5140.jpeg" alt="Walk photo 2" onclick="putAsMainImage(this)">
+            onclick="putAsMainImage(this, 'hollywood')">
+            <img src="../../assets/img/los-angeles/IMG_5140.jpeg" alt="Walk photo 2" onclick="putAsMainImage(this, 'hollywood')">
         </div>
     </div>
     <p>
@@ -143,30 +143,29 @@
         They even have a "Certificate of Recognition" award from the "United States House of Representatives" commending them as a noteworthy small business.
     </p>
     <img src="../../assets/img/los-angeles/IMG_5272.jpeg" alt="Certificate of Recognition">
-    <p>
-        Insert content here
-    </p>
     
     <h2>Cloud Coffees at Tilt</h2>
     <p>
-        Insert content here
+        After my girlfriend googled the best coffee shops in Downtown LA we decided to heat to Tilt. 
+        A coffee shop within the center of the city we were surprised to find it raised above the ground built atop another building. 
+        This pedestrian walkway took us to the two coffee shop buildings, covered in plants and suspending a large steel flower (a lotus flower?) between the shops. 
+        One building sold merchandise and coffee beans and the other operated as the actual coffee shop. 
+        We ordered 2 "cloud" coffees and despite the horrendous calorie count they were some of the best coffees we'd drank this whole time. 
+        If you find yourself in downtown LA definitely grab one while you're there!
     </p>
     <div class="gallery">
-        <div class="big-image">
-            <img id="mainImage" src="../../assets/img/los-angeles/IMG_5277.jpeg" alt="Tilt coffee shop, downtown LA">
+        <div class="main-image">
+            <img id="coffee" src="../../assets/img/los-angeles/IMG_5277.jpeg" alt="Tilt coffee shop, downtown LA">
         </div>
 
         <div class="thumbnails">
             <img src="../../assets/img/los-angeles/IMG_5277.jpeg" alt="Coffee 1"  
-            onclick="putAsMainImage(this)">
-            <img src="../../assets/img/los-angeles/IMG_5287.jpeg" alt="Coffee 2" onclick="putAsMainImage(this)">
-            <img src="../../assets/img/los-angeles/IMG_5283.jpeg" alt="Coffee 3" onclick="putAsMainImage(this)">
-            <img src="../../assets/img/los-angeles/IMG_5285.jpeg" alt="Coffee 4" onclick="putAsMainImage(this)">
+            onclick="putAsMainImage(this, 'coffee')">
+            <img src="../../assets/img/los-angeles/IMG_5287.jpeg" alt="Coffee 2" onclick="putAsMainImage(this, 'coffee')">
+            <img src="../../assets/img/los-angeles/IMG_5283.jpeg" alt="Coffee 3" onclick="putAsMainImage(this, 'coffee')">
+            <img src="../../assets/img/los-angeles/IMG_5285.jpeg" alt="Coffee 4" onclick="putAsMainImage(this, 'coffee')">
         </div>
     </div>
-    <p>
-        Insert content here
-    </p>
 
     <h2>
         LA Town Hall Viewing platform ?!
@@ -229,8 +228,8 @@
 </html>
 
 <script>
-    function putAsMainImage(thumb) {
-        const mainImage = document.getElementById("mainImage");
+    function putAsMainImage(thumb, galleryRef) {
+        const mainImage = document.getElementById(galleryRef);
         mainImage.src = thumb.src;
     }
 </script>
@@ -242,7 +241,7 @@
   text-align: center;
 }
 
-.big-image img {
+.main-image img {
   width: 100%;
   margin-bottom: 16px;
   object-fit: cover;
