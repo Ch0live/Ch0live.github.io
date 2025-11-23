@@ -58,7 +58,7 @@
         straight to their model through an API, billed to your account (billing is done by the number of tokens used in
         each prompt and generated in each response, where a token can be thought of as a word or part of a word). Now we
         can write code (here is a short python script as an example stolen directly from <a
-            href="https://platform.openai.com/docs/quickstart?context=python">OpenAI's Quickstart tutorial</a> to call
+            href="https://platform.openai.com/docs/quickstart?context=python">OpenAI's Quickstart tutorial</a>) to call
         the API with our prompt.
     </p>
 
@@ -149,7 +149,7 @@
     </p>
 
     <p style="word-break: normal; font-family: monospace;">
-        You are an expert extraction algorithm tasked at extracting what football match (or matches) the user wants
+        You are an expert extraction algorithm tasked with extracting what football match (or matches) the user wants
         to<br>
         know about. You must return the 2 football clubs that the user has asked about from the question. Return the
         2<br>
@@ -194,8 +194,8 @@
     <p>
         This prompt is engineered to ask the LLM for a specific outcome - find from the question provided two football
         teams. The specific football clubs that should be returned are listed (this data is from Premier League teams
-        during the 2017/18 season in case you are wondering why Huddersfield Town are there). There is also an example
-        of One-Shot Learning - where an example model answer has been provided. Finally, it is mentioned that if the
+        during the 2017/18 season in case you are wondering why Huddersfield Town are there).        There is also an example
+        of One-Shot Learning - where an example model answer has been provided.Finally, it is mentioned that if the
         answer cannot be found the LLM should return null and not hallucinate a response (an LLM returning
         misinformation confidently as fact is often described as the LLM hallucinating).
     </p>
@@ -283,7 +283,7 @@
     </ul>
 
     <p>
-        Ultimately, this article is concerned with the application of utilising an LLM with external tool. What has been
+        Ultimately, this article is concerned with the application of utilising an LLM with external tools. What has been
         proven here is it is possible to take an LLM model like GPT-3.5 and add new functionality around it to make it
         more useful for specific applications. There are frameworks (such as <a
             href="https://www.langchain.com/">LangChain</a>)
